@@ -1,6 +1,6 @@
 spring:
   application:
-    name: discovery-server
+    name: gateway-server
   cloud:
     config:
       label: 04-Gateway-API

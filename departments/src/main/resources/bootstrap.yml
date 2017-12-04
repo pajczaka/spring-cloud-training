@@ -4,4 +4,4 @@ spring:
   cloud:
     config:
       #uri: http://localhost:8888
-      label: 03-Eureka-server
+      label: 04-Gateway-API
