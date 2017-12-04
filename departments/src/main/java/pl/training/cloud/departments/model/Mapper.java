@@ -1,18 +1,22 @@
 package pl.training.cloud.departments.model;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.NoSuchMessageException;
+import org.springframework.stereotype.Service;
 import pl.training.cloud.departments.dto.ExceptionDto;
 
 import java.util.List;
 import java.util.Locale;
 import java.util.stream.Collectors;
 
+@Service
 public class Mapper {
 
     private MessageSource messageSource;
 
+    @Autowired
     public Mapper(MessageSource messageSource) {
         this.messageSource = messageSource;
     }
