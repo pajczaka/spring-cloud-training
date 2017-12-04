@@ -16,8 +16,6 @@ import pl.training.cloud.users.service.UsersService;
 import java.net.URI;
 import java.util.List;
 
-import static org.springframework.http.ResponseEntity.created;
-
 @Api(description = "Users resource")
 @RequestMapping(value = "users")
 @RestController
@@ -39,7 +37,7 @@ public class UsersController {
         User user = mapper.map(userDto, User.class);
         usersService.addUser(user);
         URI uri = uriBuilder.requestUriWithId(user.getId());
-        return created(uri).build();
+        return ResponseEntity.created(uri).build();
     }
 
     @ApiOperation(value = "Get users", response = PageDto.class)
