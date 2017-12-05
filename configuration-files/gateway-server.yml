@@ -1,5 +1,8 @@
 zuul:
   prefix: /api-v1
+  sensitive-headers: Cookie, Set-Cookie
+  host:
+    socket-timeout-millis: 20000
 hystrix:
   command:
     default:
