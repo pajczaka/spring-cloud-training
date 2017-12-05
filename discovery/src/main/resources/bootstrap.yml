@@ -3,4 +3,4 @@ spring:
     name: discovery-server
   cloud:
     config:
-      label: 07-Availability
+      label: label: 08-Asynchronous-communication
