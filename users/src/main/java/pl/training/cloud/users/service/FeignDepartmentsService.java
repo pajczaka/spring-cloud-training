@@ -15,7 +15,8 @@ import java.util.logging.Logger;
 
 @DefaultProperties(
         commandProperties = {
-                @HystrixProperty(name = "metrics.rollingStats.timeInMilliseconds", value = "15000")
+                @HystrixProperty(name = "metrics.rollingStats.timeInMilliseconds", value = "10000"),
+                @HystrixProperty(name = "metrics.rollingStats.numBuckets", value = "10")
         }
 )
 @Service
@@ -35,9 +36,9 @@ public class FeignDepartmentsService implements DepartmentsService {
                     @HystrixProperty(name = "maxQueueSize", value = "15")
             },
             commandProperties = {
-                    @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "5"),
-                    @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "1"),
-                    @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000")
+                    @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "20"),
+                    @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "50"),
+                    @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "5000")
             }
     )
     //@Cacheable(value = "departments", unless = "#result == null")
