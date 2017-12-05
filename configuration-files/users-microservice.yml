@@ -1,2 +1,3 @@
 server:
   port: 8501
+defaultDepartmentId: 1
