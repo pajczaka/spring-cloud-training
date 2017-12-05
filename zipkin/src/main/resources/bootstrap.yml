@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: zipkin-server
+  cloud:
+    config:
+      label: 07-Availability
+
