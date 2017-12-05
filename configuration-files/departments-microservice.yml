@@ -6,4 +6,3 @@ spring:
           destination: new-users
           content-type: application/json
           group: departments
-testprop: sss
