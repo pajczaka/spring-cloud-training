@@ -30,26 +30,25 @@ public class BalancedDepartmentsService implements DepartmentsService {
     @Cacheable(value = "departments", unless = "#result == null")
     @Override
     public Optional<Department> getDepartmentById(Long id) {
-        Optional<String> serviceUri = getServiceUri(id);
-        if (!serviceUri.isPresent()) {
+        Optional<String> resourceUri = getResourceUri(id);
+        if (!resourceUri.isPresent()) {
             return Optional.empty();
         }
-        return getDepartment(serviceUri.get());
+        return getDepartment(resourceUri.get());
     }
 
-    private Optional<Department> getDepartment(String serviceUri) {
-       Department department = null;
-       try {
-           department = new RestTemplate().getForObject(serviceUri, Department.class);
-       } catch (HttpClientErrorException ex) {
-           Logger.getLogger(getClass().getName()).log(Level.INFO, "### Fetching department failed");
-       }
-       return Optional.ofNullable(department);
+    private Optional<Department> getDepartment(String resourceUri) {
+        Department department = null;
+        try {
+            department = new RestTemplate().getForObject(resourceUri, Department.class);
+        } catch (HttpClientErrorException ex) {
+            Logger.getLogger(getClass().getName()).log(Level.INFO, "### Fetching department failed");
+        }
+        return Optional.ofNullable(department);
     }
 
-    private Optional<String> getServiceUri(Long departmentId) {
-        List<ServiceInstance> serviceInstances = discoveryClient
-                .getInstances(DEPARTMENTS_MICROSERVICE);
+    private Optional<String> getResourceUri(Long departmentId) {
+        List<ServiceInstance> serviceInstances = discoveryClient.getInstances(DEPARTMENTS_MICROSERVICE);
         if (serviceInstances.isEmpty()) {
             return Optional.empty();
         }
