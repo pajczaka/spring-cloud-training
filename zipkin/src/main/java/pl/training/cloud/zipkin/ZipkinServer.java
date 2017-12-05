@@ -9,4 +9,5 @@ public class ZipkinServer {
 	public static void main(String[] args) {
 		SpringApplication.run(ZipkinServer.class, args);
 	}
+
 }

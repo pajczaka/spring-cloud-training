@@ -8,3 +8,4 @@ spring:
           destination: new-users
           content-type: application/json
 defaultDepartmentId: 1
+testprop: 123
