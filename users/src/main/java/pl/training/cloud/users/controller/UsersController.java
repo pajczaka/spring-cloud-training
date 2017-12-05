@@ -4,6 +4,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.training.cloud.users.dto.PageDto;
@@ -28,7 +29,7 @@ public class UsersController {
     private UriBuilder uriBuilder = new UriBuilder();
 
     @Autowired
-    public UsersController(UsersService usersService, DepartmentsService departmentsService, Mapper mapper) {
+    public UsersController(UsersService usersService, @Qualifier("feignDepartmentsService") DepartmentsService departmentsService, Mapper mapper) {
         this.usersService = usersService;
         this.departmentsService = departmentsService;
         this.mapper = mapper;

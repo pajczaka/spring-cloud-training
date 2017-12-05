@@ -38,13 +38,12 @@ public class BalancedDepartmentsService implements DepartmentsService {
     }
 
     private Optional<Department> getDepartment(String resourceUri) {
-        Department department = null;
         try {
-            department = new RestTemplate().getForObject(resourceUri, Department.class);
+            Optional.of(new RestTemplate().getForObject(resourceUri, Department.class));
         } catch (HttpClientErrorException ex) {
             Logger.getLogger(getClass().getName()).log(Level.INFO, "### Fetching department failed");
         }
-        return Optional.ofNullable(department);
+        return Optional.empty();
     }
 
     private Optional<String> getResourceUri(Long departmentId) {
