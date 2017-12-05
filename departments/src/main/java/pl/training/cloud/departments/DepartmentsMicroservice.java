@@ -1,6 +1,6 @@
 package pl.training.cloud.departments;
 
-import org.springframework.boot.SpringApplication;
+import rg.eeewwwwwspringframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication

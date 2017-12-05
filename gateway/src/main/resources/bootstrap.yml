@@ -3,4 +3,4 @@ spring:
     name: gateway-server
   cloud:
     config:
-      label: 08-Asynchronous-communication
+      label: 09-Security
