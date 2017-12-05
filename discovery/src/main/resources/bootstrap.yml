@@ -3,4 +3,4 @@ spring:
     name: discovery-server
   cloud:
     config:
-      label: 06-Direct-communication
+      label: 07-Availability

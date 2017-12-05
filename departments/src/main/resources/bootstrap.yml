@@ -4,4 +4,4 @@ spring:
   cloud:
     config:
       #uri: http://localhost:8888
-      label: 06-Direct-communication
+      label: 07-Availability
