@@ -38,7 +38,7 @@ public class UsersService implements UserDetailsService {
         encodePassword(user);
         user.setActive(true);
         usersRepository.saveAndFlush(user);
-        eventEmitter.emit(user);
+        //eventEmitter.emit(user);
     }
 
     private void configureAuthority(User user) {

@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 import pl.training.cloud.users.dto.PageDto;
 import pl.training.cloud.users.dto.UserDto;
@@ -16,6 +17,7 @@ import pl.training.cloud.users.service.DepartmentsService;
 import pl.training.cloud.users.service.UsersService;
 
 import java.net.URI;
+import java.security.Principal;
 import java.util.List;
 
 @Api(description = "Users resource")
@@ -53,6 +55,13 @@ public class UsersController {
         List<UserDto> usersDtos = mapper.map(resultPage.getContent(), UserDto.class);
         usersDtos.forEach(this::mapDepartmentName);
         return new PageDto<>(usersDtos, resultPage.getPageNumber(), resultPage.getTotalPages());
+    }
+
+    @ApiOperation(value = "Get active user", response = UserDto.class)
+    @RequestMapping(value = "active", method = RequestMethod.GET)
+    public UserDto getActiveUser(Principal principal) {
+        UserDetails userDetails = usersService.loadUserByUsername(principal.getName());
+        return mapper.map(userDetails, UserDto.class);
     }
 
     private void mapDepartmentName(UserDto userDto) {
