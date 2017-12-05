@@ -14,18 +14,21 @@ import pl.training.cloud.users.repository.UsersRepository;
 public class UsersService {
 
     private UsersRepository usersRepository;
+    private EventEmitter eventEmitter;
     @Setter
     @Value("${defaultDepartmentId}")
     private Long defaultDepartmentId;
 
     @Autowired
-    public UsersService(UsersRepository usersRepository) {
+    public UsersService(UsersRepository usersRepository, EventEmitter eventEmitter) {
         this.usersRepository = usersRepository;
+        this.eventEmitter = eventEmitter;
     }
 
     public void addUser(User user) {
         user.setDepartmentId(defaultDepartmentId) ;
         usersRepository.saveAndFlush(user);
+        eventEmitter.emit(user);
     }
 
     public ResultPage<User> getUsers(int pageNumber, int pageSize) {
