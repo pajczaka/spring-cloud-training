@@ -45,7 +45,7 @@ public class DepartmentsService {
     // for training purposes
     private void randomDelay() {
         Random random = new Random();
-        if (random.nextBoolean()) {
+        if (true)/*random.nextBoolean()*/ {
             try {
                 Thread.sleep(11_000);
             } catch (InterruptedException e) {

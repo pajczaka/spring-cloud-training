@@ -1,5 +1,8 @@
 package pl.training.cloud.users.service;
 
+import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import feign.FeignException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
@@ -10,6 +13,11 @@ import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+@DefaultProperties(
+        commandProperties = {
+                @HystrixProperty(name = "metrics.rollingStats.timeInMilliseconds", value = "15000")
+        }
+)
 @Service
 public class FeignDepartmentsService implements DepartmentsService {
 
@@ -20,7 +28,19 @@ public class FeignDepartmentsService implements DepartmentsService {
         this.feignDepartmentsClient = feignDepartmentsClient;
     }
 
-    @Cacheable(value = "departments", unless = "#result == null")
+    @HystrixCommand(
+            threadPoolKey = "departments",
+            threadPoolProperties = {
+                    @HystrixProperty(name = "coreSize", value = "10"),
+                    @HystrixProperty(name = "maxQueueSize", value = "15")
+            },
+            commandProperties = {
+                    @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "5"),
+                    @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "1"),
+                    @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000")
+            }
+    )
+    //@Cacheable(value = "departments", unless = "#result == null")
     @Override
     public Optional<Department> getDepartmentById(Long id) {
         try {
