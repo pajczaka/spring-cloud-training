@@ -11,4 +11,7 @@ spring:
         binder:
           broker: 192.168.99.100
           zkNodes: 192.168.99.100
+          defaultBrokerPort: 9092
+          defaultZkPort: 2181
+
 defaultDepartmentId: 1
