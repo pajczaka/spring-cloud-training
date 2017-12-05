@@ -33,7 +33,7 @@ public class DepartmentsService {
     )
 */
     public Department getDepartmentById(Long id) {
-        randomDelay();
+        //randomDelay();
         return departmentsRepository.getById(id)
                 .orElseThrow(DepartmentNotFoundException::new);
     }
