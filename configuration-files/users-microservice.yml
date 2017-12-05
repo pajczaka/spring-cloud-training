@@ -12,5 +12,5 @@ spring:
           broker: 192.168.99.100
           zkNodes: 192.168.99.100
           defaultBrokerPort: 8001
-          defaultZkPort: 8000
+          defaultZkPort: 8800
 defaultDepartmentId: 1
