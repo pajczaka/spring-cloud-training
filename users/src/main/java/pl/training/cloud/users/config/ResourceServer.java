@@ -21,7 +21,7 @@ public class ResourceServer extends ResourceServerConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, USERS_URL).permitAll()
                 .antMatchers(HttpMethod.GET, ACTIVE_USER_URL).authenticated()
                 .antMatchers(UriBuilder.PUBLIC_URIS).permitAll()
-                .antMatchers(UriBuilder.ALL_URIS).hasAnyRole(Role.ADMIN.name());
+                .antMatchers(UriBuilder.ALL_URIS).hasRole(Role.ADMIN.name());
     }
 
 }
