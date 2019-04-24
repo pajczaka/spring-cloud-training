@@ -14,6 +14,7 @@
 
 	<modules>
 		<module>departments</module>
+		<module>configuration</module>
 	</modules>
 
 </project>
