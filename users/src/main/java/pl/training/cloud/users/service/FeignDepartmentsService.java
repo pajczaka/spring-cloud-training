@@ -2,7 +2,12 @@ package pl.training.cloud.users.service;
 
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import lombok.Value;
 import lombok.extern.java.Log;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cloud.stream.annotation.StreamListener;
+import org.springframework.cloud.stream.messaging.Sink;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
@@ -19,6 +24,7 @@ public class FeignDepartmentsService implements DepartmentsService {
     @NonNull
     private FeignDepartmentsClient feignDepartmentsClient;
 
+    @Cacheable(value = "departments", unless = "!#result.isPresent()")
     @Override
     public Optional<String> getDepartmentName(Long departmentId) {
         try {
@@ -28,9 +34,15 @@ public class FeignDepartmentsService implements DepartmentsService {
                 return Optional.of(departmentDto.getName());
             }
         } catch (HttpClientErrorException ex) {
-            log.warning("Error fetching department with id: " + departmentId);
+            log.warning("Error fetching department with id:  + departmentId");
         }
         return Optional.empty();
+    }
+
+    @CacheEvict(value = "departments", allEntries = true)
+    @StreamListener(Sink.INPUT)
+    public void onDepartmentsChange(String message) {
+        log.info("Cleaning departments cache...");
     }
 
 }

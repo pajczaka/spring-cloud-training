@@ -13,6 +13,7 @@ public class DepartmentsService {
     @NonNull
     private DepartmentsRepository departmentsRepository;
 
+    @Notify
     public Department addDepartment(Department department) {
         departmentsRepository.saveAndFlush(department);
         return department;

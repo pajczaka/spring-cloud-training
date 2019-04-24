@@ -21,7 +21,7 @@ public class BalancedDepartmentsService implements DepartmentsService {
     @NonNull
     private RestTemplate restTemplate;
 
-    @Cacheable(value = "departments", unless = "#result == null")
+    @Cacheable(value = "departments", unless = "!#result.isPresent()")
     @Override
     public Optional<String> getDepartmentName(Long departmentId) {
         try {
