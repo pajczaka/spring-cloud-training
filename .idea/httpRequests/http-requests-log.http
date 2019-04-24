@@ -1,0 +1,136 @@
+GET http://localhost:8080/api/v1/users/users
+Accept: application/json
+
+<> 2019-04-24T025152.200.json
+
+###
+
+POST http://localhost:8080/api/v1/users/users
+Content-Type: application/json
+
+{"firstName":  "Jan", "lastName": "Kowalski"}
+
+###
+
+GET http://localhost:8080/api/v1/users/users
+Accept: application/json
+
+<> 2019-04-24T022953.200.json
+
+###
+
+POST http://localhost:8080/api/v1/users/users
+Content-Type: application/json
+
+{"firstName":  "Jan", "lastName": "Kowalski"}
+
+###
+
+GET http://localhost:8080/api/v1/users/users
+Accept: application/json
+
+<> 2019-04-24T022947.200.json
+
+###
+
+GET http://localhost:8080/api/v1/users/users
+Accept: application/json
+
+<> 2019-04-24T022927.500.json
+
+###
+
+GET http://localhost:8080/api/v1/users/users
+Accept: application/json
+
+<> 2019-04-24T022919.404.json
+
+###
+
+GET http://localhost:8080/api/v1/users/users
+Accept: application/json
+
+<> 2019-04-24T022906.404.json
+
+###
+
+GET http://localhost:8080/api/v1/users/users
+Accept: application/json
+
+<> 2019-04-24T022901.404.json
+
+###
+
+GET http://localhost:8080/api/v1/users/users
+Accept: application/json
+
+<> 2019-04-24T021236.200.json
+
+###
+
+GET http://localhost:8080/api/v1/users/users
+Accept: application/json
+
+<> 2019-04-24T021220.200.json
+
+###
+
+GET http://localhost:8080/api/v1/users/users/1
+Accept: application/json
+
+<> 2019-04-24T021201.404.json
+
+###
+
+POST http://localhost:8080/api/v1/users/users
+Content-Type: application/json
+
+{"firstName":  "Jan", "lastName": "Kowalski"}
+
+###
+
+POST http://localhost:8080/api/v1/departments/departments
+Content-Type: application/json
+
+{"name":  "training"}
+
+<> 2019-04-24T021142.201.json
+
+###
+
+POST http://localhost:8080/api/v1/departments
+Content-Type: application/json
+
+{"name":  "training"}
+
+<> 2019-04-24T021052.404.json
+
+###
+
+POST http://localhost:8080/api/v1/departments
+Content-Type: application/json
+
+{"name":  "training"}
+
+<> 2019-04-24T020941.404.json
+
+###
+
+POST http://localhost:8080/api/v1/departments
+Content-Type: application/json
+
+{"name":  "training"}
+
+<> 2019-04-24T020926.404.json
+
+###
+
+POST http://localhost:8080/api/v1/departments
+Content-Type: application/json
+
+{"name":  "training"}
+
+<> 2019-04-24T020856.404.json
+
+###
+
