@@ -1,15 +1,36 @@
-version: '2'
+version: '3.4'
 services:
   zookeeper:
     image: wurstmeister/zookeeper
     ports:
       - "2181:2181"
+    networks:
+      - cloud
   kafka:
     image: wurstmeister/kafka
     ports:
       - "9092:9092"
     environment:
-      KAFKA_ADVERTISED_HOST_NAME: 172.16.8.56
+      KAFKA_ADVERTISED_HOST_NAME: kafka
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - cloud
+  configuration_server:
+    image: training/configuration-server
+    ports:
+      - 8888:8888
+    environment:
+      - KAFKA_SERVER=kafka
+      - KAFKA_PORT=9092
+      - SLEEP_TIME=1
+      - DEFAULT_PROFILE=production
+    networks:
+      - cloud
+networks:
+  cloud:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.0.0/24
