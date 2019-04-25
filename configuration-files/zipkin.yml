@@ -1,5 +1,7 @@
 server:
   port: 8090
-spring:
-  main:
-    web-application-type: none
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false
