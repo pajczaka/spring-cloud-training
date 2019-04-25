@@ -14,6 +14,12 @@ import pl.training.cloud.users.dto.DepartmentDto;
 
 import java.util.Optional;
 
+/*@DefaultProperties(
+        commandProperties = {
+                @HystrixProperty(name = "metrics.rollingStats.timeInMilliseconds", value = "10000"),
+                @HystrixProperty(name = "metrics.rollingStats.numBuckets", value = "10")
+        }
+)*/
 @Primary
 @Service
 @Log
@@ -23,6 +29,18 @@ public class FeignDepartmentsService implements DepartmentsService {
     @NonNull
     private FeignDepartmentsClient feignDepartmentsClient;
 
+    /*@HystrixCommand(
+        threadPoolKey = "departments",
+        threadPoolProperties = {
+                @HystrixProperty(name = "coreSize", value = "10"),
+                @HystrixProperty(name = "maxQueueSize", value = "15")
+        },
+        commandProperties = {
+                @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "20"),
+                @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "50"),
+                @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "5000")
+        }
+    )*/
     @Cacheable(value = "departments", unless = "#result == null")
     @Override
     public Optional<String> getDepartmentName(Long departmentId) {

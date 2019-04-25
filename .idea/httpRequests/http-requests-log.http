@@ -1,0 +1,212 @@
+GET http://localhost:8000/departments/1
+Accept: application/json
+
+<> 2019-04-25T110804.200.json
+
+###
+
+GET http://localhost:8000/departments/1
+Accept: application/json
+
+<> 2019-04-25T110802.200.json
+
+###
+
+GET http://localhost:8000/departments/1
+Accept: application/json
+
+<> 2019-04-25T110756.200.json
+
+###
+
+GET http://localhost:8000/departments/1
+Accept: application/json
+
+<> 2019-04-25T110754.200.json
+
+###
+
+POST http://localhost:8080/api/v1/departments/departments
+Content-Type: application/json
+
+{"name":  "training-test"}
+
+<> 2019-04-25T110751.500.json
+
+###
+
+POST http://localhost:8080/api/v1/departments/departments
+Content-Type: application/json
+
+{"name":  "training-test"}
+
+<> 2019-04-25T110744.500.json
+
+###
+
+GET http://localhost:8000/departments/1
+Accept: application/json
+
+<> 2019-04-25T110603.200.json
+
+###
+
+GET http://localhost:8000/departments/1
+Accept: application/json
+
+<> 2019-04-25T110558.200.json
+
+###
+
+POST http://localhost:8080/api/v1/users/users
+Content-Type: application/json
+
+{"firstName":  "Jan", "lastName": "Kowalski"}
+
+###
+
+GET http://localhost:8000/departments/1
+Accept: application/json
+
+<> 2019-04-25T110548.200.json
+
+###
+
+GET http://localhost:8000/departments/1
+Accept: application/json
+
+<> 2019-04-25T110543.200.json
+
+###
+
+POST http://localhost:8080/api/v1/departments/departments
+Content-Type: application/json
+
+{"name":  "training-test"}
+
+<> 2019-04-25T110541.201.json
+
+###
+
+POST http://localhost:8080/api/v1/departments/departments
+Content-Type: application/json
+
+{"name":  "training-test"}
+
+<> 2019-04-25T110539.500.json
+
+###
+
+POST http://localhost:8080/api/v1/departments/departments
+Content-Type: application/json
+
+{"name":  "training-test"}
+
+<> 2019-04-25T110536.500.json
+
+###
+
+POST http://localhost:8080/api/v1/departments/departments
+Content-Type: application/json
+
+{"name":  "training-test"}
+
+<> 2019-04-25T110534.500.json
+
+###
+
+POST http://localhost:8080/api/v1/departments/departments
+Content-Type: application/json
+
+{"name":  "training-test"}
+
+<> 2019-04-25T110532.500.json
+
+###
+
+POST http://localhost:8080/api/v1/departments/departments
+Content-Type: application/json
+
+{"name":  "training-test"}
+
+<> 2019-04-25T110526.500.json
+
+###
+
+GET http://localhost:8000/departments/1
+Accept: application/json
+
+<> 2019-04-25T110522.404.json
+
+###
+
+GET http://localhost:8080/departments/1
+Accept: application/json
+
+<> 2019-04-25T110508.404.json
+
+###
+
+GET http://localhost:8080/api/v1/departments/departments/1
+Accept: application/json
+
+<> 2019-04-25T110452.404.json
+
+###
+
+GET http://localhost:8080/api/v1/departments/departments/1
+Accept: application/json
+
+<> 2019-04-25T110450.404.json
+
+###
+
+GET http://localhost:8080/api/v1/departments/departments/1
+Accept: application/json
+
+<> 2019-04-25T110447.404.json
+
+###
+
+GET http://localhost:8080/api/v1/departments/departments/1
+Accept: application/json
+
+<> 2019-04-25T110444.404.json
+
+###
+
+GET http://localhost:8080/api/v1/departments/departments/1
+Accept: application/json
+
+<> 2019-04-25T110439.404.json
+
+###
+
+GET http://localhost:8080/api/v1/departments/departments/1
+Accept: application/json
+
+<> 2019-04-25T110434.504.json
+
+###
+
+GET http://localhost:8080/api/v1/departments/departments/1
+Accept: application/json
+
+<> 2019-04-25T110339.500.json
+
+###
+
+GET http://localhost:8080/api/v1/departments/departments/1
+Accept: application/json
+
+<> 2019-04-25T110337.500.json
+
+###
+
+GET http://localhost:8080/api/v1/departments/departments/1
+Accept: application/json
+
+<> 2019-04-25T110323.500.json
+
+###
+
