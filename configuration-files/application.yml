@@ -12,3 +12,8 @@ eureka:
       defaultZone: http://localhost:8089/eureka/
   instance:
     preferIpAddress: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
