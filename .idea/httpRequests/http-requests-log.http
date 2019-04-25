@@ -1,0 +1,86 @@
+POST http://localhost:8888/monitor
+Content-Type: application/x-www-form-urlencoded
+
+path=users
+
+<> 2019-04-25T084122.200.json
+
+###
+
+GET http://localhost:8080/api/v1/users/users
+Accept: application/json
+
+<> 2019-04-25T083800.500.json
+
+###
+
+POST http://localhost:8080/api/v1/users/users
+Content-Type: application/json
+
+{"firstName":  "Jan", "lastName": "Kowalski"}
+
+###
+
+POST http://localhost:8888/monitor
+Content-Type: application/x-www-form-urlencoded
+
+path=users
+
+<> 2019-04-25T083711.200.json
+
+###
+
+POST http://localhost:8888/monitor
+Content-Type: application/x-www-form-urlencoded
+
+path=users
+
+<> 2019-04-25T083623.200.json
+
+###
+
+POST http://localhost:8888/monitor
+Content-Type: application/x-www-form-urlencoded
+
+path=users
+
+<> 2019-04-25T083326.200.json
+
+###
+
+POST http://localhost:8888/monitor
+Content-Type: application/x-www-form-urlencoded
+
+path=users
+
+<> 2019-04-25T083218.200.json
+
+###
+
+POST http://localhost:8888/monitor
+Content-Type: application/x-www-form-urlencoded
+
+path=users
+
+<> 2019-04-25T082921.200.json
+
+###
+
+POST http://localhost:8888/monitor
+Content-Type: application/x-www-form-urlencoded
+
+path=users
+
+<> 2019-04-25T082839.200.json
+
+###
+
+POST http://localhost:8888/monitor
+Content-Type: application/x-www-form-urlencoded
+
+path=users
+
+<> 2019-04-25T082739.200.json
+
+###
+

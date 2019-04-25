@@ -27,7 +27,7 @@ public class SimpleDepartmentsService implements DepartmentsService {
     @NonNull
     private RestTemplate restTemplate;
 
-    @Cacheable(value = "departments", unless = "!#result.isPresent()")
+    @Cacheable(value = "departments", unless = "#result == null")
     @Override
     public Optional<String> getDepartmentName(Long departmentId) {
         Optional<String> resourceUri = getResourceUri(departmentId);
