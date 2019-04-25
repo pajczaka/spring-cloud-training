@@ -1,7 +1,6 @@
 server:
   port: 8090
-management:
-  metrics:
-    web:
-      server:
-        auto-time-requests: false
+armeria:
+  ports:
+    - port: 8091
+      protocol: HTTP
