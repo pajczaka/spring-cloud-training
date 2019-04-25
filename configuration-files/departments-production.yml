@@ -7,8 +7,3 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
-  cloud:
-    stream:
-      kafka:
-        binder:
-          brokers: kafka
