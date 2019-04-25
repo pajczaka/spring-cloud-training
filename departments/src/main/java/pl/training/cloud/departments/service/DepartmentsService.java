@@ -31,9 +31,9 @@ public class DepartmentsService {
             commandProperties = @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "3000"))
     public Department getDepartmentById(Long id) {
         //fakeDelay();
-        throw new IllegalArgumentException();
-//        return departmentsRepository.getById(id)
-//                .orElseThrow(DepartmentNotFoundException::new);
+        //throw new IllegalArgumentException();
+        return departmentsRepository.getById(id)
+                .orElseThrow(DepartmentNotFoundException::new);
     }
 
     public Department getDepartmentByIdFallback(Long id) {

@@ -4,6 +4,8 @@ spring:
       kafka:
         binder:
           brokers: kafka
+  zipkin:
+    base-url: http://zipkin-server:8090
   jpa:
     hibernate:
       ddl-auto: update
