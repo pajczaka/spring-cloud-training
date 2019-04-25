@@ -7,3 +7,9 @@ mvn clean
 mvn package
 docker build -t "training/configuration-server" .
 cd ..
+
+cd discovery
+mvn clean
+mvn package
+docker build -t "training/discovery-server" .
+cd ..
