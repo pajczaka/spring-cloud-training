@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://departments_database/departments
+    username: admin
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: create
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: kafka
