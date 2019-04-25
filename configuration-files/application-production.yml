@@ -4,6 +4,13 @@ spring:
       kafka:
         binder:
           brokers: kafka
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false;
 eureka:
   client:
     serviceUrl:

@@ -23,7 +23,7 @@ services:
   discovery-server:
     image: training/discovery-server
     ports:
-      - 8089
+      - 8089:8089
     environment:
       - CONFIGURATION_SERVER=configuration-server
       - CONFIGURATION_SERVER_PORT=8888
@@ -38,3 +38,12 @@ services:
       - PGDATA=/var/lib/postgresql/data/application
     volumes:
       - ./data/departments:/var/lib/postgresql/data/application
+  departments:
+    image: training/departments
+    ports:
+      - 8000
+    environment:
+      - CONFIGURATION_SERVER=configuration-server
+      - CONFIGURATION_SERVER_PORT=8888
+      - SLEEP_TIME=1
+      - DEFAULT_PROFILE=production

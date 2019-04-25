@@ -25,6 +25,7 @@
     </properties>
 
     <build>
+        <finalName>departments</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

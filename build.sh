@@ -2,14 +2,8 @@
 docker rmi $(docker images -q | grep "^training")
 docker rmi $(docker images -q | grep "<none>")
 
-cd configuration
-mvn clean
-mvn package
-docker build -t "training/configuration-server" .
-cd ..
+mvnw clean package
 
-cd discovery
-mvn clean
-mvn package
-docker build -t "training/discovery-server" .
-cd ..
+docker build -t "training/configuration-server" configuration
+docker build -t "training/discovery-server" discovery
+docker build -t "training/departments" departments
