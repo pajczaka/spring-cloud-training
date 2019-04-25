@@ -24,7 +24,7 @@ public class FeignDepartmentsService implements DepartmentsService {
     @NonNull
     private FeignDepartmentsClient feignDepartmentsClient;
 
-    @Cacheable(value = "departments", unless = "!#result.isPresent()")
+    @Cacheable(value = "departments", unless = "#result == null")
     @Override
     public Optional<String> getDepartmentName(Long departmentId) {
         try {
