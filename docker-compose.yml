@@ -11,7 +11,7 @@ services:
     environment:
       KAFKA_ADVERTISED_HOST_NAME: kafka
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-  configuration_server:
+  configuration-server:
     image: training/configuration-server
     ports:
       - 8888
@@ -20,7 +20,7 @@ services:
       - KAFKA_PORT=9092
       - SLEEP_TIME=1
       - DEFAULT_PROFILE=production
-  departments_database:
+  departments-database:
     image: postgres:11.2-alpine
     environment:
       - POSTGRES_DB=departments
