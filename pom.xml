@@ -12,4 +12,13 @@
 
 	<name>core</name>
 
+	<modules>
+		<module>configuration</module>
+		<module>departments</module>
+		<module>discovery</module>
+		<module>gateway</module>
+		<module>users</module>
+		<module>zipkin</module>
+	</modules>
+
 </project>
