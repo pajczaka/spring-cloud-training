@@ -4,6 +4,7 @@ spring:
   cloud:
     config:
       uri: http://localhost:8888
+      label: 04-Docker
 management:
   endpoints:
     web:
