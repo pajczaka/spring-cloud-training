@@ -43,13 +43,15 @@ public class JwtOAuth2 extends AuthorizationServerConfigurerAdapter {
                 .authenticationManager(authenticationManager)
                 .userDetailsService(usersService);
 
+
+
     }
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
                 .withClient(CLIENT_ID)
-                .authorizedGrantTypes(GRANT_TYPE)
+                .authorizedGrantTypes(GRANT_TYPE, "refresh_token")
                 .scopes(SCOPE);
     }
 

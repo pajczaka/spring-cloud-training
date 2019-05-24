@@ -33,7 +33,6 @@ public class JWTTokenStore {
     public DefaultTokenServices tokenServices(TokenStore tokenStore) {
         DefaultTokenServices defaultTokenServices = new DefaultTokenServices();
         defaultTokenServices.setTokenStore(tokenStore);
-        defaultTokenServices.setSupportRefreshToken(false);
         return defaultTokenServices;
     }
 
